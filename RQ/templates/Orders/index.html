@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Orders</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">dd</span>
+        </button>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" href="">Famous</a>-->
+<!--        </li>-->
+        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+<!--            <form class="d-flex" role="search" action="">-->
+<!--                <button class="btn btn-outline-success" type="submit">Create new campaign</button>-->
+<!--            </form>-->
+        </div>
+    </div>
+</nav>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>وقت الطلب</th>
+            <th>الشركة</th>
+            <th>الخدمة</th>
+            <th>الهدف</th>
+            <th>الحالة</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for order in ordersList %}
+        <tr>
+            <td>{{order.order_time}}</td>
+            <td>{{order.company}}</td>
+            <td>{{order.service}}</td>
+            <td>{{order.goal}}</td>
+            {% if order.status %}
+            <td><span class="text-success">تم التواصل</span></td>
+            <td></td>
+            {% else %}
+            <td><span class="text-danger">لم يتم التواصل</span></td>
+            <td>
+            <form action="/updateOrderStatus" method="post">
+                <button class="btn btn-success" type="submit">Change</button>
+            </form>
+            </td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

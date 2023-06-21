@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-11">
+    <form method="post" action="/createOrder">
+      {% csrf_token %}
+  <div class="mb-3 form-control">
+    <label for="company" class="form-label">الشركة</label>
+    <input type="text" class="form-control" id="company" name="company" aria-describedby="emailHelp">
+<!--    <span class="text-danger">danger</span>-->
+  </div>
+  <div class="mb-3 form-control">
+    <label for="contactPerson" class="form-label">الممثل</label>
+    <input type="text" class="form-control" id="contactPerson" name="contactPerson" aria-describedby="emailHelp" placeholder="اسم الشخص الذي سيقوم بالتواصل">
+<!--    <span class="text-danger">danger</span>-->
+  </div>
+  <div class="mb-3 form-control">
+    <label for="email" class="form-label">البريد الإلكتروني</label>
+    <input type="email" class="form-control" id="email" name="v" aria-describedby="emailHelp">
+<!--    <span class="text-danger">danger</span>-->
+  </div>
+  <div class="mb-3 form-control">
+    <label for="phone" class="form-label">رقم الجوال</label>
+    <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" placeholder="+966 5xxxxxxxxx">
+<!--    <span class="text-danger">danger</span>-->
+  </div>
+  <div class="mb-3 form-control">
+    <label for="service" class="form-label">الخدمة</label>
+    <select name="service" id="service" class="form-select" aria-label="Default select example">
+      <option selected value="campaigns">الحملات المتكاملة - أكثر من 200 ألف ريال</option>
+      <option value="socialMediaAccountsManagement">إدارة حسابات السوشيال ميديا</option>
+      <option value="Ads">الإعلانات الممولة</option>
+      <option value="express">اكسبريس المشاهير ( سناب - تيكتوك - تويتر )</option>
+    </select>
+<!--    <span class="text-danger">danger</span>-->
+  </div>
+  <div class="mb-3 form-control">
+    <label for="type" class="form-label">النوع</label>
+    <select name="type" id="type" class="form-select" aria-label="Default select example" onChange="checkTypeOption()">
+      <option selected value="restaurants">مطاعم</option>
+      <option  value="ecommerce">تجارة إلكترونية</option>
+      <option  value="apps">تطبيقات</option>
+      <option  value="clinics">عيادات</option>
+      <option  value="else">غيرها</option>
+
+    </select>
+<!--    <span class="text-danger">danger</span>-->
+    <div id="elseTypeDiv" style="display: none; margin:10px 0px;">
+    <input type="text" class="form-control" id="elseType" name="elseType" aria-describedby="emailHelp">
+  </div>
+  </div>
+  <div class="mb-3 form-control">
+    <label for="date" class="form-label">تاريخ الحملة المتوقع</label>
+    <input type="date" class="form-control" id="date" name="date" aria-describedby="emailHelp">
+<!--    <span class="text-danger">danger</span>-->
+  </div>
+  <div class="mb-3 form-control">
+    <label for="goal" class="form-label">الخدمة</label>
+    <select name="goal" id="goal" class="form-select" aria-label="Default select example" onChange="checkServiceOption()">
+      <option selected value="sales">زيادة المبيعات</option>
+      <option value="consciousness">زيادة الوعي ( الشركة أو منتج )</option>
+    </select>
+<!--    <span class="text-danger">danger</span>-->
+        <div id="elseServiceDiv" style="display: none; margin:10px 0px;">
+    <input type="text" class="form-control" id="elseService" name="elseService" aria-describedby="emailHelp">
+  </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">إرسال</button>
+</form>
+</div>
+
+<script>
+  function checkTypeOption() {
+    var select = document.getElementById("type");
+    var selectedOption = select.value;
+    var inputField = document.getElementById("elseTypeDiv");
+
+    if (selectedOption === "else") {
+      inputField.style.display = "block";
+    } else {
+      inputField.style.display = "none";
+    }
+  }
+
+    function checkTypeOption() {
+    var select = document.getElementById("goal");
+    var selectedOption = select.value;
+    var inputField = document.getElementById("elseServiceDiv");
+
+    if (selectedOption === "else") {
+      inputField.style.display = "block";
+    } else {
+      inputField.style.display = "none";
+    }
+  }
+
+</script>
+
+{% endblock %}
