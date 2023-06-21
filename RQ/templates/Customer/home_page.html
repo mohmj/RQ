@@ -1,31 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="col-11">
-    <form method="post" action="/createOrder">
+    <form method="post" action="createOrder">
       {% csrf_token %}
   <div class="mb-3 form-control">
     <label for="company" class="form-label">اسم الشركة</label>
-    <input type="text" class="form-control" id="company" name="company" aria-describedby="emailHelp" required>
+    <input type="text" class="form-control" id="company" name="company" aria-describedby="emailHelp">
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-3 form-control">
     <label for="contactPerson" class="form-label">الممثل</label>
-    <input type="text" class="form-control" id="contactPerson" name="contactPerson" aria-describedby="emailHelp" placeholder="اسم الشخص الذي سيقوم بالتواصل" required>
+    <input type="text" class="form-control" id="contactPerson" name="contactPerson" aria-describedby="emailHelp" placeholder="اسم الشخص الذي سيقوم بالتواصل" >
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-3 form-control">
     <label for="email" class="form-label">البريد الإلكتروني</label>
-    <input type="email" class="form-control" id="email" name="v" aria-describedby="emailHelp" required>
+    <input type="email" class="form-control" id="email" name="v" aria-describedby="emailHelp" >
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-3 form-control">
     <label for="phone" class="form-label">رقم الجوال</label>
-    <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" required>
+    <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" >
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-3 form-control">
     <label for="service" class="form-label">نوع الخدمة</label>
-    <select name="service" id="service" class="form-select" aria-label="Default select example" required>
+    <select name="service" id="service" class="form-select" aria-label="Default select example" >
       <option  value="campaigns">الحملات المتكاملة</option>
       <option value="socialMediaAccountsManagement">إدارة حسابات السوشال ميديا</option>
       <option value="Ads">الإعلانات الممولة</option>
@@ -35,7 +35,7 @@
   </div>
   <div class="mb-3 form-control">
     <label for="type" class="form-label">النوع</label>
-    <select name="type" id="type" class="form-select" aria-label="Default select example" onChange="checkTypeOption()" required>
+    <select name="type" id="type" class="form-select" aria-label="Default select example" onChange="checkTypeOption()" >
       <option selected value="restaurants">مطاعم</option>
       <option  value="ecommerce">تجارة إلكترونية</option>
       <option  value="apps">تطبيقات</option>
@@ -45,12 +45,12 @@
     </select>
 <!--    <span class="text-danger">danger</span>-->
     <div id="elseTypeDiv" style="display: none; margin:10px 0px;">
-    <input type="text" class="form-control" id="elseType" name="elseType" required>
+    <input type="text" class="form-control" id="elseType" name="elseType" >
   </div>
   </div>
   <div class="mb-3 form-control">
     <label for="date" class="form-label">تاريخ الحملة المتوقع</label>
-    <input type="date" class="form-control" id="date" name="date" required>
+    <input type="date" class="form-control" id="date" name="date" >
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-3 form-control">
@@ -61,11 +61,11 @@
     </select>
 <!--    <span class="text-danger">danger</span>-->
         <div id="elseServiceDiv" style="display: none; margin:10px 0px;">
-    <input type="text" class="form-control" id="elseService" name="elseService" required>
+    <input type="text" class="form-control" id="elseService" name="elseService">
   </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">إرسال</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
 
