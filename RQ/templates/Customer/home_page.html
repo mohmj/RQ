@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 <div class="col-11">
+  <div class="logo-container" style="display: flex; justify-content: center;">
+        <img width="20%" src="{% static 'images/logo_yellow_english.png' %}" alt="Logo">
+    </div>
     <form method="post" action="createOrder">
       {% csrf_token %}
   <div class="mb-3 form-control">
@@ -49,8 +53,17 @@
   </div>
   </div>
   <div class="mb-3 form-control">
-    <label for="date" class="form-label">تاريخ الحملة المتوقع</label>
-    <input type="date" class="form-control" id="date" name="date" >
+    <label class="form-label">تاريخ الحملة المتوقع</label>
+    <div>
+      <label class="form-label">من</label>
+      <input type="date" id="start-date" name="start-date">
+    </div>
+    <div>
+    <label class="form-label">إلى</label>
+      <input type="date" id="end-date" name="end-date">
+    </div>
+
+<!--    <input type="date" class="form-control" id="date" name="date" >-->
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-3 form-control">
@@ -65,7 +78,7 @@
   </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" style="background-color:#ebd129; border:none; color:#0f3460; width:50%; display:flex; justify-content:center; align-items:center; " >إرسال</button>
 </form>
 </div>
 
@@ -95,5 +108,23 @@
   }
 
 </script>
+<script>
+    var datepicker = new Datepicker(document.getElementById('date-range'), {
+      format: 'yyyy-mm-dd',
+      onSelect: function(selectedDate) {
+        var fromDate = new Date(selectedDate);
+        var toDate = new Date(selectedDate);
+        toDate.setDate(toDate.getDate() + 1);
+        document.getElementById('date-range').value = selectedDate + ' - ' + formatDate(toDate);
+      }
+    });
+
+    function formatDate(date) {
+      var year = date.getFullYear();
+      var month = ('0' + (date.getMonth() + 1)).slice(-2);
+      var day = ('0' + date.getDate()).slice(-2);
+      return year + '-' + month + '-' + day;
+    }
+  </script>
 
 {% endblock %}
