@@ -43,7 +43,7 @@
             <th>الخدمة</th>
             <th>الهدف</th>
             <th>البداية</th>
-            <th>النهاية</th>
+            <th>عدد الأيام</th>
             <th>الحالة</th>
             <th>Actions</th>
         </tr>
@@ -57,7 +57,7 @@
             <td>{{order.service}}</td>
             <td>{{order.goal}}</td>
             <td>{{order.start_date}}</td>
-            <td>{{order.end_date}}</td>
+            <td style="text-align:center">{{order.numberOfDays}}</td>
             {% if order.status %}
             <td><span class="text-success">تم التواصل</span></td>
             <td></td>

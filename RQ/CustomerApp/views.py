@@ -13,7 +13,7 @@ def HomePost(request): #Create new contact order .
     service=request.POST.get("service")
     type=request.POST.get("type")
     start_date=request.POST.get("start-date")
-    end_date=request.POST.get("end-date")
+    number_of_days=request.POST.get("number-of-days")
     goal=request.POST.get("goal")
     order_time=firebase_config.firestore.SERVER_TIMESTAMP
     id=str(company)+" - "+str(datetime.datetime.now(pytz.timezone('Asia/Riyadh')).strftime("%m-%d-%y-%H:%M"))
@@ -26,8 +26,10 @@ def HomePost(request): #Create new contact order .
         "service":service,
         "type":type,
         "start_date":start_date,
-        "end_date":end_date,
+        "numberOfDays":number_of_days,
         "goal":goal,
         "order_time":order_time
     })
-    return render(request, "Customer/order_approve.html")
+    return render(request, "Customer/order_approve.html" ,{
+        'id':id,
+    })

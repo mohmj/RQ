@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<div class="col-11">
+<div class="col-8">
   <div class="logo-container" style="display: flex; justify-content: center;">
-        <img width="20%" src="{% static 'images/logo_yellow_english.png' %}" alt="Logo">
+        <img width="20%" src="{% static 'images/logo_yellow_Arabic.png' %}" alt="Logo">
+        <img width="20%" src="{% static 'images/logo_yellow_English.png' %}" alt="Logo">
     </div>
     <form method="post" action="createOrder">
       {% csrf_token %}
@@ -30,17 +31,19 @@
   <div class="mb-3 form-control">
     <label for="service" class="form-label">نوع الخدمة</label>
     <select name="service" id="service" class="form-select" aria-label="Default select example" >
+      <option value="" disabled selected>الرجاء الاختيار</option>
       <option  value="campaigns">الحملات المتكاملة</option>
       <option value="socialMediaAccountsManagement">إدارة حسابات السوشال ميديا</option>
       <option value="Ads">الإعلانات الممولة</option>
-      <option selected value="express"><i class="fa-brands fa-instagram" style="color: #000000;padding:0px 5px 0px 5px" ></i> اكسبريس المشاهير </option>
+      <option  value="express"><i class="fa-brands fa-instagram" style="color: #000000;padding:0px 5px 0px 5px" ></i> اكسبريس المشاهير </option>
     </select>
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-3 form-control">
     <label for="type" class="form-label">النوع</label>
     <select name="type" id="type" class="form-select" aria-label="Default select example" onChange="checkTypeOption()" >
-      <option selected value="restaurants">مطاعم</option>
+      <option value="" disabled selected>الرجاء الاختيار</option>
+      <option  value="restaurants">مطاعم</option>
       <option  value="ecommerce">تجارة إلكترونية</option>
       <option  value="apps">تطبيقات</option>
       <option  value="clinics">عيادات</option>
@@ -55,13 +58,12 @@
   <div class="mb-3 form-control">
     <label class="form-label">تاريخ الحملة المتوقع</label>
     <div>
-      <label class="form-label">من</label>
+      <label class="form-label">ابتداءاً من</label>
       <input type="date" id="start-date" name="start-date">
+      <label for="number-of-days" class="from-label">عدد الأيام</label>
+      <input type="number" id="number-of-days" name="number-of-days" value="1" min="0">
     </div>
-    <div>
-    <label class="form-label">إلى</label>
-      <input type="date" id="end-date" name="end-date">
-    </div>
+
 
 <!--    <input type="date" class="form-control" id="date" name="date" >-->
 <!--    <span class="text-danger">danger</span>-->
@@ -69,7 +71,8 @@
   <div class="mb-3 form-control">
     <label for="goal" class="form-label">الهدف من الحملة</label>
     <select name="goal" id="goal" class="form-select" aria-label="Default select example" onChange="checkServiceOption()">
-      <option selected value="sales">زيادة المبيعات</option>
+      <option value="" disabled selected>الرجاء الاختيار</option>
+      <option  value="sales">زيادة المبيعات</option>
       <option value="consciousness">زيادة الوعي ( الشركة أو منتج )</option>
     </select>
 <!--    <span class="text-danger">danger</span>-->
@@ -77,8 +80,9 @@
     <input type="text" class="form-control" id="elseService" name="elseService">
   </div>
   </div>
-
-  <button type="submit" class="btn btn-primary" style="background-color:#ebd129; border:none; color:#0f3460; width:50%; display:flex; justify-content:center; align-items:center; " >إرسال</button>
+  <div style=" display:flex; justify-content:center; align-items:center; ">
+      <button type="submit" class="btn btn-primary" style="background-color:#ebd129; border:none; color:#0f3460; width:50%;" >إرسال</button>
+  </div>
 </form>
 </div>
 
@@ -94,6 +98,7 @@
       inputField.style.display = "none";
     }
   }
+
 
     function checkTypeOption() {
     var select = document.getElementById("goal");
@@ -125,6 +130,11 @@
       var day = ('0' + date.getDate()).slice(-2);
       return year + '-' + month + '-' + day;
     }
+
+    flatpickr("#start_date", {
+    // Customize the date picker options if needed
+  });
+
   </script>
 
 {% endblock %}
