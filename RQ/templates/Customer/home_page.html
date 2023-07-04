@@ -2,9 +2,9 @@
 {% block content %}
 {% load static %}
 <div class="col-8">
-  <div class="logo-container" style="display: flex; justify-content: center;">
-        <img width="20%" src="{% static 'images/logo_yellow_Arabic.png' %}" alt="Logo">
-        <img width="20%" src="{% static 'images/logo_yellow_English.png' %}" alt="Logo">
+  <div class="logo-container" style="display: flex; justify-content: center; margin:1%">
+        <img width="20%" src="{% static 'images/logo_blue_Arabic.png' %}" alt="Logo" style="margin:0% 0%">
+        <img width="20%" height="20%" src="{% static 'images/logo_blue_English.png' %}" alt="Logo" style="margin:0% 0%">
     </div>
     <form method="post" action="createOrder">
       {% csrf_token %}
@@ -60,7 +60,7 @@
     <div>
       <label class="form-label">ابتداءاً من</label>
       <input type="date" id="start-date" name="start-date">
-      <label for="number-of-days" class="from-label">عدد الأيام</label>
+      <label for="number-of-days" class="from-label">عدد أيام الحملة</label>
       <input type="number" id="number-of-days" name="number-of-days" value="1" min="0">
     </div>
 
@@ -81,7 +81,7 @@
   </div>
   </div>
   <div style=" display:flex; justify-content:center; align-items:center; ">
-      <button type="submit" class="btn btn-primary" style="background-color:#ebd129; border:none; color:#0f3460; width:50%;" >إرسال</button>
+      <button type="submit" class="btn btn-primary" style="background-color:#0f3460; border:none; color:#ebd129; width:50%;" >إرسال</button>
   </div>
 </form>
 </div>
