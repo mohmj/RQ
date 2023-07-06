@@ -1,10 +1,73 @@
 @font-face {
-    font-family: 'SST Arabic Medium';
-    src: url('/static/fonts/alfont_com_SST-Arabic-Medium.ttf') format('truetype');
+  font-family: 'SST Arabic Medium';
+  src: url('/static/fonts/alfont_com_SST-Arabic-Medium.ttf') format('truetype');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 body {
-    font-family: 'SST Arabic Medium', 'Poppins', Arial, sans-serif;
+  font-family: 'SST Arabic Medium', 'Poppins', Arial, sans-serif;
 }
+
+#container{
+  position: relative;
+}
+
+.top-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 25%;
+  background-image: url('/static/images/logo_yellow_English.png');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+  z-index: -1;
+  border: coral solid 1px;
+}
+.top-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 25%;
+  background-image: url('/static/images/logo_yellow_Arabic.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: contain;
+  z-index: -1;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  height: 25%;
+  background-image: url('/static/images/Element\ 2.png');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  z-index: -1;
+}
+
+.bottom-right {
+  position: fixed;
+  margin:0;
+  padding:0;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  height: 20%;
+  background-image: url('/static/images/Element.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size:contain;    
+  z-index: -1;
+}
+
+/* .bottom-left, .bottom-right{
+  width: 15%;
+  height: 15%;
+} */
