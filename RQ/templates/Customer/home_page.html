@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<div class="col-8">
+<div class="col-9">
   <div class="logo-container" style="display: flex; justify-content: center; margin:1%;">
         <!-- <img width="20%" src="{% static 'images/logo_blue_Arabic.png' %}" alt="Logo" style="margin:0% 0%"> -->
         <!-- <img width="20%" height="20%" src="{% static 'images/logo_blue_English.png' %}" alt="Logo" style="margin:0% 0%"> -->
@@ -9,27 +9,27 @@
     </div>
     <form method="post" action="createOrder" style="z-index: 1;">
       {% csrf_token %}
-  <div class="mb-3 form-control" style="background-color: #ebd129;">
+  <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="company" class="form-label">اسم الشركة</label>
     <input  type="text" class="form-control" id="company" name="company">
 <!--    <span class="text-danger">danger</span>-->
   </div>
-  <div class="mb-3 form-control" style="background-color: #ebd129;">
+  <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="contactPerson" class="form-label">الممثل</label>
     <input style=" color:black" type="text" class="form-control" id="contactPerson" name="contactPerson" placeholder="اسم الشخص الذي سيقوم بالتواصل" >
 <!--    <span class="text-danger">danger</span>-->
   </div>
-  <div class="mb-3 form-control" style="background-color: #ebd129;">
+  <div class="mb-4 form-control from-group" style="background-color: #ebd129;">
     <label for="email" class="form-label">البريد الإلكتروني</label>
     <input type="email" class="form-control" id="email" name="email">
 <!--    <span class="text-danger">danger</span>-->
   </div>
-  <div class="mb-3 form-control" style="background-color: #ebd129;">
+  <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="phone" class="form-label">رقم الجوال</label>
     <input type="text" class="form-control" id="phone" name="phone">
 <!--    <span class="text-danger">danger</span>-->
   </div>
-  <div class="mb-3 form-control" style="background-color: #ebd129;">
+  <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="service" class="form-label">نوع الخدمة</label>
     <select name="service" id="service" class="form-select" aria-label="Default select example" >
       <option value="" disabled selected>الرجاء الاختيار</option>
@@ -40,7 +40,7 @@
     </select>
 <!--    <span class="text-danger">danger</span>-->
   </div>
-  <div class="mb-3 form-control" style="background-color: #ebd129;">
+  <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="type" class="form-label">النوع</label>
     <!-- <select name="type" id="type" class="form-select" aria-label="Default select example" onChange="checkTypeOption()" > -->
     <select name="type" id="type" class="form-select" aria-label="Default select example">
@@ -58,7 +58,7 @@
     <input type="text" class="form-control" id="elseType" name="elseType" placeholder="نوع الشركة">
   </div>
   </div>
-  <div class="mb-3 form-control" style="background-color: #ebd129;">
+  <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label class="form-label">تاريخ الحملة المتوقع</label>
     <div>
       <label class="form-label">ابتداءاً من</label>
@@ -71,7 +71,7 @@
 <!--    <input type="date" class="form-control" id="date" name="date" >-->
 <!--    <span class="text-danger">danger</span>-->
   </div>
-  <div class="mb-3 form-control" style="background-color: #ebd129; z-index: -1;">
+  <div class="mb-4 form-control" style="background-color: #ebd129; z-index: -1;">
     <label for="goal" class="form-label">الهدف من الحملة</label>
     <select name="goal" id="goal" class="form-select" aria-label="Default select example" onChange="checkServiceOption()">
       <option value="" disabled selected>الرجاء الاختيار</option>
@@ -85,7 +85,7 @@
     <input type="text" class="form-control" id="elseService" name="elseService">
   </div>
   </div>
-  <div style=" display:flex; justify-content:center; align-items:center; ">
+  <div class="mb-4" style=" display:flex; justify-content:center; align-items:center; ">
       <button type="submit" class="btn btn-primary" style="background-color:#ebd129; border:none; color:#0f3460; width:50%;" >إرسال</button>
   </div>
 </form>

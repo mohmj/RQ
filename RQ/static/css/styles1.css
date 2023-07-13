@@ -40,7 +40,7 @@ body {
   }
   
   .bottom-left {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 25%;
@@ -71,3 +71,12 @@ body {
     width: 15%;
     height: 15%;
   } */
+
+  @media (max-width:450px){
+    .bottom-right{
+      background-image: url('/static//images/Element\ 2.png');
+    }
+    .bottom-left{
+      background-image: url('/static/images//Element.png');
+    }
+  }
