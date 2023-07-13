@@ -17,8 +17,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 20%;
-    height: 20%;
+    width: 15%;
+    height: 15%;
     background-image: url('/static/images/logo_yellow_English.png');
     background-repeat: no-repeat;
     background-position: top left;
@@ -30,8 +30,8 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    width: 18%;
-    height: 20%;
+    width: 15%;
+    height: 15%;
     background-image: url('/static/images/logo_yellow_Arabic.png');
     background-repeat: no-repeat;
     background-position: top right;
