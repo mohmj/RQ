@@ -3,35 +3,36 @@
 {% load static %}
 <div class="col-9">
   <div class="logo-container" style="display: flex; justify-content: center; margin:1%;">
-        <!-- <img width="20%" src="{% static 'images/logo_blue_Arabic.png' %}" alt="Logo" style="margin:0% 0%"> -->
-        <!-- <img width="20%" height="20%" src="{% static 'images/logo_blue_English.png' %}" alt="Logo" style="margin:0% 0%"> -->
-        <img width="130%" height="80px" src="{% static 'images/yellow_light_above.png' %}" alt="Logo" style="margin:0% 0%;"> 
+    <!-- <div>        <img width="130%" height="80px" style="display:block;" src="{% static 'images/yellow_light_above.png' %}" alt="Logo" style="margin:0% 0%;"> 
+    </div> -->
+        <img width="25%" height="20%" src="{% static 'images/RQ-Logo-Arabic-Variation-01.png' %}" alt="Logo" style="margin:0% 0%">
+        <img width="25%" height="20%" src="{% static 'images/RQ-Logo-English-Variation-01.png' %}" alt="Logo" style="margin:0% 0%">
     </div>
     <form method="post" action="createOrder" style="z-index: 1;">
       {% csrf_token %}
   <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="company" class="form-label">اسم الشركة</label>
-    <input  type="text" class="form-control" id="company" name="company">
+    <input  type="text" class="form-control" id="company" name="company" style="font-size: 24pt;">
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="contactPerson" class="form-label">الممثل</label>
-    <input style=" color:black" type="text" class="form-control" id="contactPerson" name="contactPerson" placeholder="اسم الشخص الذي سيقوم بالتواصل" >
+    <input style="color:black; font-size: 24pt;" type="text" class="form-control" id="contactPerson" name="contactPerson" placeholder="اسم الشخص الذي سيقوم بالتواصل" >
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-4 form-control from-group" style="background-color: #ebd129;">
     <label for="email" class="form-label">البريد الإلكتروني</label>
-    <input type="email" class="form-control" id="email" name="email">
+    <input  style="font-size: 24pt;" type="email" class="form-control" id="email" name="email">
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="phone" class="form-label">رقم الجوال</label>
-    <input type="text" class="form-control" id="phone" name="phone">
+    <input  style="font-size: 24pt;" type="text" class="form-control" id="phone" name="phone">
 <!--    <span class="text-danger">danger</span>-->
   </div>
   <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="service" class="form-label">نوع الخدمة</label>
-    <select name="service" id="service" class="form-select" aria-label="Default select example" >
+    <select  style="font-size: 24pt;" name="service" id="service" class="form-select" aria-label="Default select example" >
       <option value="" disabled selected>الرجاء الاختيار</option>
       <option  value="campaigns">الحملات المتكاملة</option>
       <option value="socialMediaAccountsManagement">إدارة حسابات السوشال ميديا</option>
@@ -43,7 +44,7 @@
   <div class="mb-4 form-control" style="background-color: #ebd129;">
     <label for="type" class="form-label">النوع</label>
     <!-- <select name="type" id="type" class="form-select" aria-label="Default select example" onChange="checkTypeOption()" > -->
-    <select name="type" id="type" class="form-select" aria-label="Default select example">
+    <select  style="font-size: 24pt;" name="type" id="type" class="form-select" aria-label="Default select example">
 
       <option value="" disabled selected>الرجاء الاختيار</option>
       <option  value="restaurants">مطاعم</option>
@@ -62,9 +63,9 @@
     <label class="form-label">تاريخ الحملة المتوقع</label>
     <div>
       <label class="form-label">ابتداءاً من</label>
-      <input type="date" id="start-date" name="start-date">
+      <input style="font-size: 24pt;" type="date" id="start-date" name="start-date" class="form-control">
       <label for="number-of-days" class="from-label">عدد أيام الحملة</label>
-      <input type="number" id="number-of-days" name="number-of-days" value="1" min="0">
+      <input  style="font-size: 24pt;" type="number" id="number-of-days" name="number-of-days" value="1" min="0" class="form-control">
     </div>
 
 
@@ -73,7 +74,7 @@
   </div>
   <div class="mb-4 form-control" style="background-color: #ebd129; z-index: -1;">
     <label for="goal" class="form-label">الهدف من الحملة</label>
-    <select name="goal" id="goal" class="form-select" aria-label="Default select example" onChange="checkServiceOption()">
+    <select  style="font-size: 24pt;" name="goal" id="goal" class="form-select" aria-label="Default select example" onChange="checkServiceOption()">
       <option value="" disabled selected>الرجاء الاختيار</option>
       <option  value="sales">زيادة المبيعات</option>
       <option value="consciousness">زيادة الوعي ( الشركة أو منتج )</option>
@@ -86,7 +87,7 @@
   </div>
   </div>
   <div class="mb-4" style=" display:flex; justify-content:center; align-items:center; ">
-      <button type="submit" class="btn btn-primary" style="background-color:#ebd129; border:none; color:#0f3460; width:50%;" >إرسال</button>
+      <button type="submit" class="btn btn-primary" style="background-color:#ebd129; border:none; color:#0f3460; width:50%; font-size: 24pt;" >إرسال</button>
   </div>
 </form>
 </div>

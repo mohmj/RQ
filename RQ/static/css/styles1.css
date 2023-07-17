@@ -11,11 +11,17 @@ body {
     font-family: 'SST Arabic Medium', 'Poppins', Arial, sans-serif;
 }
 
+input, label, select, button{
+  font-size: 24pt;
+}
+
+
+
 #container{
     position: relative;
 }
 
-.top-left {
+/* .top-left {
     position: fixed;
     top: 0;
     left: 0;
@@ -40,7 +46,7 @@ body {
     background-position: top right;
     background-size: contain;
     z-index: -1;
-  }
+  } */
   
   .bottom-left {
     position: fixed;
