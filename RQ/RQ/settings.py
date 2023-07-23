@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vjcd#9qqm9f*2gyspp$z55gpum*fgoba2-*o=yxhcc&za9l4d_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','44.201.193.113','rq.marketing']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','44.201.193.113','rq.marketing','16.171.136.213']
 
 
 # Application definition
@@ -68,7 +68,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'RQ.wsgi.application'
-
+    
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
