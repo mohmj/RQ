@@ -10,4 +10,3 @@ def HomeGet(request): #open home page of orders app .
         orderDict['order_time']=datetime.datetime.fromtimestamp(orderDict['order_time'].timestamp(),pytz.timezone('Asia/Riyadh')).strftime("%m-%d-%y %H:%M")
         ordersList.append(orderDict)
     return render(request,"Orders/index.html",{"ordersList":ordersList})
-
