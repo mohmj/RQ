@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 <head>
@@ -69,7 +68,7 @@
             <form action="/updateOrderStatus?state=contacted&orderId={{order.id}}" method="post">
                 <button class="btn btn-success" type="submit">Change</button>
             </form>
-            <button class="btn btn-primary" onClick="copyTextToClipboard('time: {{order.order_time}} \r\ncompany: {{order.company}} \r\ncontact: {{order.contactPerson}} \r\nservice: {{order.service}} \r\nemail: {{order.email}} \r\nphone: {{order.phone}}')">Copy</button>
+            <button class="btn btn-primary" onClick="copyTextToClipboard('time: {{order.order_time}} \r\ncompany: {{order.company}} \r\ncontact: {{order.contactPerson}} \r\nservice: {{order.type}} \r\nemail: {{order.email}} \r\nphone: {{order.phone}}')">Copy</button>
             </td>
             {% endif %}
         </tr>
